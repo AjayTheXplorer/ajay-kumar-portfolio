@@ -1,0 +1,45 @@
+/* =========================================================
+   NAVBAR ACTIVE STATE — FINAL
+   ========================================================= */
+
+/*
+ * Hover:
+ *   temporary underline
+ *
+ * Active:
+ *   persistent underline + stronger text
+ *
+ * The active state is supplied by Navbar.tsx from the actual
+ * route or current homepage scroll position.
+ */
+
+.navbar__links a.is-active {
+  color: var(--text-primary);
+  font-weight: 650;
+}
+
+.navbar__links a.is-active:not(.navbar__resume)::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/*
+ * Prevent hover from changing the visual meaning of an active item.
+ */
+.navbar__links a.is-active:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+
+  .navbar__links a.is-active {
+    color: var(--text-primary);
+    background: #f3f5f7;
+    border-radius: 12px;
+    font-weight: 650;
+  }
+
+  .navbar__links a.is-active:not(.navbar__resume)::after {
+    display: none;
+  }
+}

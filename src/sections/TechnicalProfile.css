@@ -1,0 +1,277 @@
+.technical-profile {
+  background: var(--surface);
+}
+
+.technical-profile__header {
+  max-width: 780px;
+  margin-bottom: 70px;
+}
+
+.technical-profile__eyebrow {
+  margin: 0 0 18px;
+
+  color: var(--accent);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.technical-profile__header h2 {
+  margin: 0;
+}
+
+.technical-profile__header h2 {
+  display: block;
+  color: var(--text-primary);
+}
+
+.technical-profile__header h2 span {
+  display: block;
+  color: var(--text-secondary);
+}
+
+.technical-profile__intro {
+  max-width: 700px;
+  margin-top: 26px;
+
+  color: var(--text-secondary);
+}
+
+/* --------------------------------
+   Grid
+-------------------------------- */
+
+.technical-profile__grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+/* --------------------------------
+   Card
+-------------------------------- */
+
+.capability-card {
+  min-height: 330px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 35px;
+
+  border: 1px solid var(--border);
+  border-radius: 26px;
+
+  background: var(--background);
+
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+
+.capability-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 20px 50px rgba(13, 27, 42, 0.06);
+}
+
+.capability-card--primary {
+  border-color: rgba(13, 27, 42, 0.22);
+}
+
+.capability-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 35px;
+}
+
+.capability-card__number {
+  color: var(--text-secondary);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.capability-card__primary {
+  padding: 6px 9px;
+
+  border-radius: 999px;
+
+  background: var(--text-primary);
+
+  color: white;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.capability-card h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 1.65rem;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.capability-card__description {
+  max-width: 520px;
+
+  margin: 16px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* --------------------------------
+   Technologies
+-------------------------------- */
+
+.capability-card__technologies {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.capability-card__technologies span {
+  padding: 7px 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+/* --------------------------------
+   Last card
+-------------------------------- */
+
+.capability-card:last-child {
+  grid-column: 1 / -1;
+}
+
+/* --------------------------------
+   Mobile
+-------------------------------- */
+
+@media (max-width: 800px) {
+  .technical-profile__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .capability-card:last-child {
+    grid-column: auto;
+  }
+
+  .capability-card {
+    min-height: 0;
+    padding: 28px 25px;
+  }
+
+  .capability-card__top {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .technical-profile__header {
+    margin-bottom: 50px;
+  }
+
+  .capability-card {
+    border-radius: 21px;
+  }
+
+  .capability-card h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================================================
+   HOMEPAGE UI REFINEMENT — TECHNICAL PROFILE
+========================================================= */
+
+.capability-card {
+  border-color: #e1e6ec;
+  box-shadow:
+    0 1px 2px rgba(13, 27, 42, 0.03),
+    0 10px 28px rgba(13, 27, 42, 0.045);
+}
+
+.capability-card:hover {
+  border-color: rgba(37, 99, 235, 0.18);
+  box-shadow:
+    0 2px 4px rgba(13, 27, 42, 0.035),
+    0 16px 34px rgba(13, 27, 42, 0.07);
+}
+
+.capability-card--primary {
+  border-color: rgba(13, 27, 42, 0.16);
+  background: #f9fbfc;
+}
+
+.capability-card__primary {
+  box-shadow: 0 2px 7px rgba(13, 27, 42, 0.10);
+}
+
+.capability-card__technologies span {
+  border-color: #e2e7ec;
+  background: #fbfcfd;
+  box-shadow: 0 1px 2px rgba(13, 27, 42, 0.02);
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.capability-card__technologies span:hover {
+  border-color: #d6dde5;
+  background: #f8fafc;
+  box-shadow: 0 4px 10px rgba(13, 27, 42, 0.04);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 800px) {
+  .capability-card {
+    padding: 27px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .capability-card {
+    border-radius: 20px;
+  }
+
+  .capability-card__technologies {
+    gap: 7px;
+  }
+
+  .capability-card__technologies span {
+    padding: 6px 9px;
+  }
+}
+
+@media (hover: none) {
+  .capability-card__technologies span:hover {
+    transform: none;
+  }
+}

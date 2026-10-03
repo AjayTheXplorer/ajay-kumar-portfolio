@@ -1,0 +1,350 @@
+/* =========================================================
+   SHARED CASE STUDY HEADER
+   Desktop: direct navigation
+   Mobile: same visual language as homepage
+   ========================================================= */
+
+.case-study-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  border-bottom: 1px solid #e2e6ea;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.case-study-header-inner {
+  width: min(100% - 48px, 1280px);
+  min-height: 68px;
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.case-study-header-brand {
+  flex: 0 0 auto;
+
+  color: #0d1b2a;
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.case-study-header-desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.case-study-header-desktop-nav a {
+  padding: 8px 11px;
+
+  border-radius: 8px;
+
+  color: #5f6b7a;
+  text-decoration: none;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.case-study-header-desktop-nav a:hover {
+  color: #0d1b2a;
+  background: #f3f5f7;
+}
+
+.case-study-header-desktop-nav a.is-active {
+  color: #0d1b2a;
+  background: #f1f3f5;
+}
+
+
+/* Mobile button is hidden on desktop */
+.case-study-menu-button {
+  display: none;
+}
+
+
+/* Mobile layer is hidden until menu opens */
+.case-study-mobile-layer {
+  display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .case-study-header {
+    z-index: 1100;
+  }
+
+  .case-study-header-inner {
+    width: min(100% - 30px, 1280px);
+    min-height: 60px;
+    gap: 16px;
+  }
+
+  .case-study-header-brand {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  /* Same simple right-side hamburger treatment as homepage */
+  .case-study-menu-button {
+    display: grid;
+    place-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    flex: 0 0 auto;
+
+    padding: 0;
+
+    border: 1px solid #9aa3ad;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #0d1b2a;
+
+    cursor: pointer;
+
+    transition:
+      background 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .case-study-menu-button:hover {
+    background: #f3f5f7;
+    border-color: #6f7984;
+  }
+
+  .case-study-menu-button:active {
+    transform: scale(0.96);
+  }
+
+  .case-study-menu-button svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .case-study-header-desktop-nav {
+    display: none;
+  }
+
+
+  /* Full-screen mobile navigation layer */
+  .case-study-mobile-layer {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1200;
+
+    display: block;
+  }
+
+  .case-study-mobile-backdrop {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    border: 0;
+
+    background: rgba(13, 27, 42, 0.32);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    cursor: pointer;
+  }
+
+
+  /* Menu panel */
+  .case-study-mobile-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: min(82vw, 340px);
+    height: 100%;
+
+    padding: 24px 20px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border-left: 1px solid #e2e6ea;
+
+    box-shadow: -18px 0 45px rgba(13, 27, 42, 0.12);
+
+    overflow-y: auto;
+
+    animation: caseStudyMenuIn 180ms ease-out;
+  }
+
+  .case-study-mobile-menu-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 36px;
+
+    margin-bottom: 24px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #e2e6ea;
+  }
+
+  .case-study-mobile-menu-heading > span {
+    color: #ff6b00;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  .case-study-mobile-menu-heading button {
+    display: grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    border: 1px solid #d5dbe0;
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #0d1b2a;
+
+    cursor: pointer;
+  }
+
+  .case-study-mobile-menu-heading button svg {
+    width: 17px;
+    height: 17px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+  }
+
+
+  /* Navigation items */
+  .case-study-mobile-link {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+
+    min-height: 58px;
+
+    padding: 0 10px;
+
+    border-bottom: 1px solid #edf0f2;
+
+    color: #0d1b2a;
+    text-decoration: none;
+  }
+
+  .case-study-mobile-link > span {
+    color: #8a949e;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .case-study-mobile-link strong {
+    font-size: 0.96rem;
+    font-weight: 650;
+  }
+
+  .case-study-mobile-link:hover {
+    background: #f7f8fa;
+  }
+
+  .case-study-mobile-link.is-active {
+    margin-inline: -10px;
+    padding-inline: 20px;
+
+    background: #f3f5f7;
+  }
+
+  .case-study-mobile-link.is-active > span,
+  .case-study-mobile-link.is-active strong {
+    color: #ff6b00;
+  }
+
+  .case-study-mobile-menu-footer {
+    margin-top: auto;
+
+    padding: 24px 10px 4px;
+
+    color: #9aa3ad;
+
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+}
+
+
+@keyframes caseStudyMenuIn {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .case-study-mobile-menu {
+    animation: none;
+  }
+
+  .case-study-menu-button {
+    transition: none;
+  }
+}

@@ -1,0 +1,240 @@
+.about {
+  background: var(--background);
+}
+
+.about__header {
+  max-width: 820px;
+  margin-bottom: 70px;
+}
+
+.about__eyebrow {
+  margin: 0 0 18px;
+
+  color: var(--accent);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.about__header h2 {
+  margin: 0;
+}
+
+.about__header h2 {
+     display: block;
+    color: var(--text-primary);
+}
+
+.about__header h2 span {
+  display: block;
+  color: var(--text-secondary);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+
+  gap: 90px;
+
+  align-items: start;
+}
+
+.about__story {
+  max-width: 720px;
+}
+
+.about__story p {
+  margin: 0 0 25px;
+
+  color: var(--text-secondary);
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about__story p:last-child {
+  margin-bottom: 0;
+}
+
+.about__story .about__lead {
+  margin-bottom: 30px;
+
+  color: var(--text-primary);
+
+  font-size: 1.3rem;
+  line-height: 1.55;
+  font-weight: 500;
+
+  letter-spacing: -0.02em;
+}
+
+/* --------------------------------
+   Focus Card
+-------------------------------- */
+
+.about__focus {
+  position: sticky;
+  top: 110px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 24px;
+
+  background: var(--surface);
+
+  box-shadow: 0 20px 50px rgba(13, 27, 42, 0.04);
+}
+
+.about__focus-header {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text-secondary);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.about__focus-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow: 0 0 0 5px rgba(0, 184, 176, 0.1);
+}
+
+.about__focus-list {
+  padding: 10px 24px;
+}
+
+.about__focus-list div {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 65px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.about__focus-list div:last-child {
+  border-bottom: none;
+}
+
+.about__focus-list strong {
+  color: var(--text-secondary);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.about__focus-list span {
+  color: var(--text-primary);
+
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.about__focus-footer {
+  padding: 17px 24px;
+
+  background: var(--background);
+
+  color: var(--text-secondary);
+
+  font-size: 0.7rem;
+}
+
+/* --------------------------------
+   Mobile
+-------------------------------- */
+
+@media (max-width: 850px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .about__focus {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .about__header {
+    margin-bottom: 50px;
+  }
+
+  .about__story .about__lead {
+    font-size: 1.15rem;
+  }
+
+  .about__focus {
+    border-radius: 21px;
+  }
+}
+
+/* =========================================================
+   HOMEPAGE UI REFINEMENT — ABOUT
+   Visual-only polish. Existing layout/content preserved.
+========================================================= */
+
+.about__focus {
+  border-color: #e1e6ec;
+  box-shadow:
+    0 1px 2px rgba(13, 27, 42, 0.03),
+    0 14px 34px rgba(13, 27, 42, 0.055);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.about__focus:hover {
+  border-color: rgba(0, 184, 176, 0.22);
+  box-shadow:
+    0 2px 4px rgba(13, 27, 42, 0.035),
+    0 18px 38px rgba(13, 27, 42, 0.07);
+  transform: translateY(-2px);
+}
+
+.about__focus-header {
+  border-bottom-color: #e5e9ee;
+  background: #fbfcfd;
+}
+
+.about__focus-list div {
+  border-bottom-color: #e8ecf0;
+}
+
+.about__focus-footer {
+  background: #f7f9fb;
+}
+
+@media (max-width: 600px) {
+  .about__focus {
+    border-radius: 20px;
+  }
+}
+
+@media (hover: none) {
+  .about__focus:hover {
+    transform: none;
+  }
+}
