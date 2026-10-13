@@ -1,0 +1,956 @@
+
+/* =========================================================
+   GUMB EXPERIENCE — PROFESSIONAL CASE STUDY
+   Soft borders, restrained shadows and responsive layouts
+   ========================================================= */
+
+.gumb-page {
+  --gumb-accent: #4778ff;
+  --gumb-accent-soft: rgba(71, 120, 255, 0.08);
+  --gumb-border: var(--border, #e4e8ed);
+  --gumb-background: var(--background, #f6f8fb);
+  --gumb-surface: var(--surface, #ffffff);
+  --gumb-text: var(--text-primary, #101d2a);
+  --gumb-muted: var(--text-secondary, #617083);
+
+  width: 100%;
+  overflow: clip;
+  color: var(--gumb-text);
+  background: var(--gumb-background);
+}
+
+.gumb-page *,
+.gumb-page *::before,
+.gumb-page *::after {
+  box-sizing: border-box;
+}
+
+.gumb-container {
+  width: min(1280px, calc(100% - 104px));
+  margin-inline: auto;
+}
+
+.gumb-page p,
+.gumb-page h1,
+.gumb-page h2,
+.gumb-page h3 {
+  overflow-wrap: anywhere;
+}
+
+.gumb-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gumb-page a:focus-visible {
+  outline: 2px solid var(--gumb-accent);
+  outline-offset: 4px;
+}
+
+.gumb-eyebrow {
+  margin: 0 0 18px;
+  color: var(--gumb-accent);
+  font-size: 0.73rem;
+  font-weight: 750;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* HERO */
+
+.gumb-hero {
+  padding: 100px 0 104px;
+  background:
+    radial-gradient(
+      circle at 88% 15%,
+      rgba(71, 120, 255, 0.07),
+      transparent 34%
+    ),
+    var(--gumb-background);
+  border-bottom: 1px solid var(--gumb-border);
+}
+
+.gumb-hero > .gumb-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.75fr);
+  align-items: center;
+  gap: clamp(48px, 8vw, 112px);
+}
+
+.gumb-hero__content {
+  min-width: 0;
+}
+
+.gumb-hero h1 {
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 7.2rem);
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.gumb-hero h1 span {
+  color: var(--gumb-muted);
+  font-weight: 500;
+}
+
+.gumb-hero__role {
+  margin: 25px 0 16px;
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+
+.gumb-hero__description {
+  max-width: 680px;
+  margin: 0;
+  color: var(--gumb-muted);
+  font-size: clamp(1rem, 1.4vw, 1.17rem);
+  line-height: 1.85;
+}
+
+.gumb-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.gumb-meta span,
+.gumb-tags span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 9px 13px;
+  border: 1px solid var(--gumb-border);
+  border-radius: 999px;
+  background: var(--gumb-surface);
+  color: var(--gumb-muted);
+  font-size: 0.79rem;
+  font-weight: 550;
+  line-height: 1.4;
+}
+
+.gumb-hero__actions,
+.gumb-closing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.gumb-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 13px 19px;
+  border: 1px solid var(--gumb-border);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.gumb-button--primary {
+  border-color: var(--gumb-text);
+  background: var(--gumb-text);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(16, 29, 42, 0.09);
+}
+
+.gumb-button--secondary {
+  background: var(--gumb-surface);
+  color: var(--gumb-text);
+}
+
+.gumb-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(16, 29, 42, 0.09);
+}
+
+.gumb-button--secondary:hover {
+  border-color: rgba(71, 120, 255, 0.35);
+  background: var(--gumb-accent-soft);
+}
+
+.gumb-highlight-card {
+  padding: clamp(25px, 3vw, 36px);
+  border: 1px solid var(--gumb-border);
+  border-radius: 25px;
+  background: var(--gumb-surface);
+  box-shadow: 0 12px 34px rgba(16, 29, 42, 0.045);
+}
+
+.gumb-card-label {
+  margin: 0 0 18px;
+  color: var(--gumb-muted);
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+
+.gumb-highlight-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  letter-spacing: -0.05em;
+  line-height: 1.15;
+}
+
+.gumb-highlight-card > p:not(.gumb-card-label) {
+  margin: 0;
+  color: var(--gumb-muted);
+  font-size: 0.91rem;
+  line-height: 1.75;
+}
+
+.gumb-highlight-card__divider {
+  height: 1px;
+  margin: 26px 0 10px;
+  background: var(--gumb-border);
+}
+
+.gumb-highlight-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--gumb-border);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.gumb-highlight-row:last-child {
+  padding-bottom: 2px;
+  border-bottom: 0;
+}
+
+.gumb-highlight-row span:first-child {
+  color: var(--gumb-accent);
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+/* SHARED SECTIONS */
+
+.gumb-section {
+  padding: 100px 0;
+}
+
+.gumb-section-heading {
+  max-width: 720px;
+  margin-bottom: 44px;
+}
+
+.gumb-section-heading h2,
+.gumb-migration h2,
+.gumb-context h2,
+.gumb-closing h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  font-weight: 720;
+  letter-spacing: -0.05em;
+  line-height: 1.08;
+}
+
+.gumb-section-heading h2 span,
+.gumb-migration h2 span,
+.gumb-closing h2 span {
+  color: var(--gumb-muted);
+}
+
+.gumb-section-intro {
+  max-width: 650px;
+  margin: 18px 0 0;
+  color: var(--gumb-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* OVERVIEW */
+
+.gumb-overview {
+  background: var(--gumb-surface);
+}
+
+.gumb-overview__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.gumb-overview-card {
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid var(--gumb-border);
+  border-radius: 21px;
+  background: var(--gumb-background);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.gumb-card-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(71, 120, 255, 0.16);
+  border-radius: 12px;
+  background: var(--gumb-accent-soft);
+  color: var(--gumb-accent);
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.gumb-overview-card h3,
+.gumb-contribution-card h3 {
+  margin: 23px 0 10px;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+}
+
+.gumb-overview-card p,
+.gumb-contribution-card p {
+  margin: 0;
+  color: var(--gumb-muted);
+  font-size: 0.91rem;
+  line-height: 1.8;
+}
+
+/* ROLE */
+
+.gumb-role__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(40px, 8vw, 112px);
+}
+
+.gumb-role__layout .gumb-section-heading {
+  margin-bottom: 0;
+}
+
+.gumb-role__content > p {
+  margin: 0 0 20px;
+  color: var(--gumb-muted);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.gumb-role-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 30px;
+  padding: 21px;
+  border: 1px solid rgba(71, 120, 255, 0.17);
+  border-radius: 17px;
+  background: var(--gumb-accent-soft);
+}
+
+.gumb-role-note__dot {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--gumb-accent);
+  box-shadow: 0 0 0 5px rgba(71, 120, 255, 0.1);
+}
+
+.gumb-role-note p {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.gumb-role-note p span {
+  color: var(--gumb-muted);
+}
+
+/* CONTRIBUTIONS */
+
+.gumb-contributions {
+  background: var(--gumb-surface);
+  border-top: 1px solid var(--gumb-border);
+  border-bottom: 1px solid var(--gumb-border);
+}
+
+.gumb-section-heading--wide {
+  max-width: 850px;
+}
+
+.gumb-contributions__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gumb-contribution-card {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--gumb-border);
+  border-radius: 21px;
+  background: var(--gumb-background);
+  box-shadow: 0 3px 12px rgba(16, 29, 42, 0.018);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.gumb-contribution-card h3 {
+  margin-top: 20px;
+}
+
+/* ANDROID MIGRATION */
+
+.gumb-migration {
+  background: var(--gumb-background);
+}
+
+.gumb-migration__card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+  align-items: center;
+  gap: 50px;
+  padding: clamp(28px, 5vw, 58px);
+  border: 1px solid var(--gumb-border);
+  border-radius: 26px;
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(71, 120, 255, 0.075),
+      transparent 45%
+    ),
+    var(--gumb-surface);
+  box-shadow: 0 8px 26px rgba(16, 29, 42, 0.035);
+}
+
+.gumb-migration__copy h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.gumb-migration__copy > p:last-child {
+  max-width: 600px;
+  margin: 20px 0 0;
+  color: var(--gumb-muted);
+  line-height: 1.85;
+}
+
+.gumb-migration__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 26px);
+}
+
+.gumb-version {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 25px 12px;
+  border: 1px solid var(--gumb-border);
+  border-radius: 20px;
+  background: var(--gumb-background);
+}
+
+.gumb-version > span {
+  color: var(--gumb-muted);
+  font-size: 0.67rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+
+.gumb-version strong {
+  margin: 10px 0;
+  font-size: clamp(2.6rem, 5vw, 4.3rem);
+  font-weight: 750;
+  letter-spacing: -0.08em;
+  line-height: 1;
+}
+
+.gumb-version small {
+  color: var(--gumb-muted);
+  font-size: 0.8rem;
+}
+
+.gumb-version--current {
+  border-color: rgba(71, 120, 255, 0.23);
+  background: var(--gumb-accent-soft);
+}
+
+.gumb-version--current strong {
+  color: var(--gumb-accent);
+}
+
+.gumb-migration__arrow {
+  flex: 0 0 auto;
+  color: var(--gumb-accent);
+  font-size: 1.4rem;
+}
+
+/* TECHNOLOGY */
+
+.gumb-technology {
+  background: var(--gumb-surface);
+  border-top: 1px solid var(--gumb-border);
+}
+
+.gumb-technology__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(40px, 8vw, 100px);
+}
+
+.gumb-technology__layout .gumb-section-heading {
+  margin-bottom: 0;
+}
+
+.gumb-technology__card {
+  display: grid;
+  gap: 28px;
+  padding: clamp(24px, 3vw, 34px);
+  border: 1px solid var(--gumb-border);
+  border-radius: 23px;
+  background: var(--gumb-background);
+}
+
+.gumb-technology__group + .gumb-technology__group {
+  padding-top: 26px;
+  border-top: 1px solid var(--gumb-border);
+}
+
+.gumb-technology__group h3 {
+  margin: 0 0 18px;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.gumb-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.gumb-tags span {
+  padding: 8px 12px;
+  font-size: 0.77rem;
+}
+
+/* PROFESSIONAL CONTEXT */
+
+.gumb-context {
+  background: var(--gumb-background);
+}
+
+.gumb-context__card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(35px, 7vw, 90px);
+  padding: clamp(28px, 5vw, 54px);
+  border: 1px solid var(--gumb-border);
+  border-radius: 24px;
+  background: var(--gumb-surface);
+}
+
+.gumb-context h2 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.gumb-context__copy p {
+  margin: 0 0 17px;
+  color: var(--gumb-muted);
+  font-size: 0.94rem;
+  line-height: 1.85;
+}
+
+.gumb-context__copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* CLOSING */
+
+.gumb-closing {
+  padding: 95px 0 110px;
+  border-top: 1px solid var(--gumb-border);
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(71, 120, 255, 0.07),
+      transparent 55%
+    ),
+    var(--gumb-surface);
+  text-align: center;
+}
+
+.gumb-closing .gumb-eyebrow {
+  margin-bottom: 20px;
+}
+
+.gumb-closing h2 {
+  max-width: 850px;
+  margin-inline: auto;
+}
+
+.gumb-closing > .gumb-container > p:not(.gumb-eyebrow) {
+  max-width: 650px;
+  margin: 22px auto 0;
+  color: var(--gumb-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.gumb-closing__actions {
+  justify-content: center;
+}
+
+/* HOVER POLISH */
+
+@media (hover: hover) and (pointer: fine) {
+  .gumb-overview-card:hover,
+  .gumb-contribution-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(71, 120, 255, 0.22);
+    box-shadow: 0 10px 26px rgba(16, 29, 42, 0.055);
+  }
+
+  .gumb-meta span:hover,
+  .gumb-tags span:hover {
+    border-color: rgba(71, 120, 255, 0.25);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+  .gumb-container {
+    width: min(100% - 56px, 760px);
+  }
+
+  .gumb-hero {
+    padding: 78px 0;
+  }
+
+  .gumb-hero > .gumb-container {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .gumb-hero__side {
+    max-width: 620px;
+  }
+
+  .gumb-overview__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gumb-contributions__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gumb-role__layout,
+  .gumb-technology__layout,
+  .gumb-context__card {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .gumb-role__layout .gumb-section-heading,
+  .gumb-technology__layout .gumb-section-heading {
+    margin-bottom: 0;
+  }
+
+  .gumb-migration__card {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .gumb-migration__visual {
+    max-width: 440px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .gumb-container {
+    width: calc(100% - 36px);
+  }
+
+  .gumb-hero {
+    padding: 58px 0 64px;
+  }
+
+  .gumb-hero > .gumb-container {
+    gap: 34px;
+  }
+
+  .gumb-eyebrow {
+    margin-bottom: 14px;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+  }
+
+  .gumb-hero h1 {
+    font-size: clamp(3.7rem, 16vw, 5rem);
+  }
+
+  .gumb-hero__role {
+    margin-top: 20px;
+    font-size: 1.18rem;
+  }
+
+  .gumb-hero__description {
+    font-size: 0.96rem;
+    line-height: 1.8;
+  }
+
+  .gumb-meta {
+    gap: 8px;
+    margin-top: 23px;
+  }
+
+  .gumb-meta span {
+    padding: 8px 10px;
+    font-size: 0.73rem;
+  }
+
+  .gumb-hero__actions,
+  .gumb-closing__actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 11px;
+    margin-top: 27px;
+  }
+
+  .gumb-button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .gumb-highlight-card {
+    padding: 24px;
+    border-radius: 21px;
+  }
+
+  .gumb-section {
+    padding: 68px 0;
+  }
+
+  .gumb-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .gumb-section-heading h2,
+  .gumb-migration h2,
+  .gumb-context h2,
+  .gumb-closing h2 {
+    font-size: clamp(2rem, 9vw, 2.7rem);
+    line-height: 1.12;
+  }
+
+  .gumb-overview__grid,
+  .gumb-contributions__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .gumb-overview-card,
+  .gumb-contribution-card {
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .gumb-overview-card h3,
+  .gumb-contribution-card h3 {
+    margin-top: 18px;
+  }
+
+  .gumb-role__layout,
+  .gumb-technology__layout,
+  .gumb-context__card {
+    gap: 28px;
+  }
+
+  .gumb-role__content > p {
+    font-size: 0.95rem;
+  }
+
+  .gumb-role-note {
+    padding: 18px;
+  }
+
+  .gumb-migration__card {
+    gap: 28px;
+    padding: 23px;
+    border-radius: 21px;
+  }
+
+  .gumb-migration__copy > p:last-child {
+    font-size: 0.92rem;
+  }
+
+  .gumb-migration__visual {
+    gap: 10px;
+  }
+
+  .gumb-version {
+    padding: 21px 8px;
+    border-radius: 16px;
+  }
+
+  .gumb-version strong {
+    font-size: 3rem;
+  }
+
+  .gumb-technology__card {
+    padding: 22px;
+    gap: 23px;
+    border-radius: 19px;
+  }
+
+  .gumb-technology__group + .gumb-technology__group {
+    padding-top: 22px;
+  }
+
+  .gumb-tags {
+    gap: 8px;
+  }
+
+  .gumb-tags span {
+    padding: 8px 10px;
+    font-size: 0.73rem;
+  }
+
+  .gumb-context__card {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .gumb-context__copy p {
+    font-size: 0.9rem;
+  }
+
+  .gumb-closing {
+    padding: 70px 0 78px;
+  }
+
+  .gumb-closing > .gumb-container > p:not(.gumb-eyebrow) {
+    font-size: 0.94rem;
+  }
+}
+
+
+/* =========================================================
+   GUMB — FINAL VISUAL CORRECTIONS
+   ========================================================= */
+
+.gumb-page {
+  /* Explicit local tokens prevent dark global borders leaking in. */
+  --gumb-border: rgba(16, 29, 42, 0.10);
+  --gumb-background: #f6f8fb;
+  --gumb-surface: #ffffff;
+  --gumb-text: #101d2a;
+  --gumb-muted: #617083;
+}
+
+/* Keep primary headings dark even if global gradient text styles exist. */
+.gumb-page .gumb-hero h1,
+.gumb-page .gumb-section-heading h2,
+.gumb-page .gumb-migration__copy h2,
+.gumb-page .gumb-context h2,
+.gumb-page .gumb-closing h2 {
+  color: var(--gumb-text) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--gumb-text) !important;
+}
+
+/* Secondary heading lines stay muted, not nearly white. */
+.gumb-page .gumb-hero h1 span,
+.gumb-page .gumb-section-heading h2 span,
+.gumb-page .gumb-migration__copy h2 span,
+.gumb-page .gumb-closing h2 span {
+  color: var(--gumb-muted) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--gumb-muted) !important;
+}
+
+/* Restore readable role-focus heading. */
+.gumb-page .gumb-highlight-card h2 {
+  color: var(--gumb-text) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--gumb-text) !important;
+}
+
+/* All primary panel and card outlines use a softer neutral border. */
+.gumb-page .gumb-highlight-card,
+.gumb-page .gumb-overview-card,
+.gumb-page .gumb-contribution-card,
+.gumb-page .gumb-migration__card,
+.gumb-page .gumb-technology__card,
+.gumb-page .gumb-context__card,
+.gumb-page .gumb-version,
+.gumb-page .gumb-role-note,
+.gumb-page .gumb-meta span,
+.gumb-page .gumb-tags span,
+.gumb-page .gumb-button {
+  border-color: var(--gumb-border);
+}
+
+/* Keep the primary CTA intentional, without a harsh outline. */
+.gumb-page .gumb-button--primary {
+  border-color: var(--gumb-text);
+}
+
+/* Subtle separation between sections. */
+.gumb-page .gumb-hero,
+.gumb-page .gumb-contributions,
+.gumb-page .gumb-technology,
+.gumb-page .gumb-closing {
+  border-color: var(--gumb-border);
+}
+
+/* Slightly softer surface shadows. */
+.gumb-page .gumb-highlight-card,
+.gumb-page .gumb-overview-card,
+.gumb-page .gumb-contribution-card,
+.gumb-page .gumb-migration__card {
+  box-shadow: 0 5px 20px rgba(16, 29, 42, 0.035);
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .gumb-page *,
+  .gumb-page *::before,
+  .gumb-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

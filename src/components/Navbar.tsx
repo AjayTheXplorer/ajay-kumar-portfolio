@@ -137,15 +137,16 @@ function Navbar() {
             Tapnix
           </Link>
 
+          
           <a
             href="/resume/resume.pdf"
-            target="_blank"
-            rel="noreferrer"
+            download="Ajay_Kumar_Android_Developer_Resume.pdf"
             className="navbar__resume"
             onClick={closeMenu}
           >
             Resume
           </a>
+
 
         </nav>
 
